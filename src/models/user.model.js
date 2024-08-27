@@ -52,7 +52,7 @@ const userSchema=new mongoose.Schema({
 })
 userSchema.pre("save",async function(next){
    if(!this.isModified("password")) next();
-   this.password=bcrypt.hash(this.password,8)  // 8 number dia hai jo k rounds hain ---- idher passowrd encrypt ho raha hai
+   this.password=await bcrypt.hash(this.password,8)  // 8 number dia hai jo k rounds hain ---- idher passowrd encrypt ho raha hai
    next()
 
 }) //()=> aisy bilkul
