@@ -365,7 +365,7 @@ if(!channel?.length){
     throw new ApiError(404, "Channel does not exists")
 }
 console.log(channel);
-return res
+return response
 .status(200)
 .json(
     new ApiResponse(200,
